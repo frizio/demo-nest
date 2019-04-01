@@ -5,6 +5,6 @@ import { Module } from '@nestjs/common';
 @Module({
     imports: [],
     controllers: [TasksController],
-    providers: [TasksService]
+    providers: [TasksService],
 })
 export class TasksModule {}
