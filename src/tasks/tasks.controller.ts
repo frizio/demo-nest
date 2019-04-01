@@ -5,8 +5,8 @@ import { TaskDto } from './dto/task-dto';
 export class TasksController {
 
     @Get()
-    getTasks(): string {
-        return 'Retrieving alle the tasks';
+    getTasks(): {hello: string} {
+        return {hello: 'world'};
     }
 
     @Post()
@@ -14,7 +14,6 @@ export class TasksController {
         console.log(task);
         console.log(task.description);
         console.log(task.done);
-        
         return 'Creating a task';
     }
 
