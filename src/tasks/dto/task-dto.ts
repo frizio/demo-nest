@@ -1,1 +1,5 @@
-export class TaskDto {}
+export class TaskDto {
+    title: string;
+    description: string;
+    done: boolean;
+}
