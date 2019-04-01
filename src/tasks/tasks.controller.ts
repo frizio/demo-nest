@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Put, Delete, Body } from '@nestjs/common';
+import { Controller, Get, Post, Put, Delete, Body, Param } from '@nestjs/common';
 import { TaskDto } from './dto/task-dto';
 
 @Controller('tasks')
@@ -17,14 +17,14 @@ export class TasksController {
         return 'Creating a task';
     }
 
+    @Delete(':id')
+    deleteTask(@Param('id') id): string {
+        return `Deleting the task ${id}`;
+    }
+
     @Put()
     updateTask(): string {
         return 'Updating a task';
-    }
-
-    @Delete()
-    deleteTask(): string {
-        return 'Deteting a task';
     }
 
 }
