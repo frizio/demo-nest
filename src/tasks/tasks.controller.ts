@@ -22,9 +22,10 @@ export class TasksController {
         return `Deleting the task ${id}`;
     }
 
-    @Put()
-    updateTask(): string {
-        return 'Updating a task';
+    @Put(':id')
+    updateTask(@Param('id') id, @Body() task: TaskDto): string {
+        console.log(task);
+        return `Updating the task ${id}`;
     }
 
 }
