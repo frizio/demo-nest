@@ -26,7 +26,7 @@ export class TasksService {
         },
     ];
 
-    getTesks() {
+    getTasks() {
         return this.tasks;
     }
 
