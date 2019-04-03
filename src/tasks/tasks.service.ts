@@ -7,7 +7,7 @@ import { Model } from 'mongoose';
 export class TasksService {
 
     constructor(
-        @InjectModel('task')
+        @InjectModel('Task')
         private taskModel: Model<Tasks>,
     ) {}
 
