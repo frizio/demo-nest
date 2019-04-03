@@ -22,10 +22,7 @@ export class TasksController {
 
     @Post()
     createTask(@Body() task: TaskDto): string {
-        console.log(task);
-        console.log(task.description);
-        console.log(task.done);
-        return 'Creating a task';
+        return this.taskService.createTask(task);
     }
 
     @Delete(':id')

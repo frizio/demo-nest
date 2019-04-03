@@ -1,3 +1,4 @@
+import { TaskDto } from './dto/task-dto';
 import { Tasks } from './interfaces/tasks.interface';
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
@@ -18,5 +19,11 @@ export class TasksService {
     async getTask(id: string) {
         return await this.taskModel.findById(id);
     }
-    
+
+    createTask(task: TaskDto) {
+        const newTask = new this.taskModel(task);
+        console.log(newTask);
+        return 'task saved in the db';
+    }
+
 }
