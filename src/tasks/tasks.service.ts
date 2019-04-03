@@ -20,10 +20,9 @@ export class TasksService {
         return await this.taskModel.findById(id);
     }
 
-    createTask(task: TaskDto) {
+    async createTask(task: TaskDto) {
         const newTask = new this.taskModel(task);
-        console.log(newTask);
-        return 'task saved in the db';
+        return await newTask.save();
     }
 
 }
