@@ -11,4 +11,12 @@ export class TasksService {
         private taskModel: Model<Tasks>,
     ) {}
 
+    async getTasks() {
+        return await this.taskModel.find();
+    }
+
+    async getTask(id: string) {
+        return await this.taskModel.findById(id);
+    }
+    
 }

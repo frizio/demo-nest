@@ -11,13 +11,13 @@ export class TasksController {
     ) {}
 
     @Get()
-    getTasks(): Tasks[] {
+    getTasks(): Promise<Tasks[]> {
         return this.taskService.getTasks();
     }
 
     @Get(':id')
-    getTask(@Param('id') id): Tasks {
-        return this.taskService.getTask( parseInt(id, 10) );
+    getTask(@Param('id') id): Promise<Tasks> {
+        return this.taskService.getTask(id);
     }
 
     @Post()
